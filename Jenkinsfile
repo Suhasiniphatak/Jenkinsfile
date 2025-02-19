@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKER_IMAGE = "mydockerhub/myapp-backend:v1"  // Replace with your DockerHub username
+    DOCKER_IMAGE = "suhasini03/myapp-backend:v1"  // Replace with your DockerHub username
   }
   stages {
     stage('Checkout Code') {
