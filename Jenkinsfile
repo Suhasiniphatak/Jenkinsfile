@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git 'https://github.com/Jenkinsfile.git'  // Replace with your repo URL
+        git 'https://github.com/Suhasiniphatak/Jenkinsfile.git'  // Replace with your repo URL
       }
     }
     stage('Build Docker Image') {
