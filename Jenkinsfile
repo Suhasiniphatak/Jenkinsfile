@@ -1,12 +1,12 @@
 pipeline {
   agent any
   environment {
-    DOCKER_IMAGE = "suhasini03/myapp-backend:v1"  // Replace with your DockerHub username
+    DOCKER_IMAGE = "suhasini03/myapp-backend:v1"  // 
   }
   stages {
     stage('Checkout Code') {
       steps {
-        git 'https://github.com/Suhasiniphatak/Jenkinsfile.git'  // Replace with your repo URL
+        git 'https://github.com/Suhasiniphatak/Jenkinsfile.git'  // 
       }
     }
     stage('Build Docker Image') {
