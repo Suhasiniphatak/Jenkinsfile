@@ -11,30 +11,30 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t $DOCKER_IMAGE .'
+        bat 'docker build -t $DOCKER_IMAGE .'
       }
     }
     stage('Run Tests') {
       steps {
-        sh 'npm install'
-        sh 'npm test'
+        bat 'npm install'
+        bat 'npm test'
       }
     }
     stage('Scan with Trivy') {
       steps {
-        sh 'trivy image $DOCKER_IMAGE'
+        bat 'trivy image $DOCKER_IMAGE'
       }
     }
     stage('Push Image to Docker Hub') {
       steps {
         withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
-          sh 'docker push $DOCKER_IMAGE'
+          bat 'docker push $DOCKER_IMAGE'
         }
       }
     }
     stage('Deploy to Kubernetes') {
       steps {
-        sh 'kubectl apply -f k8s/deployment.yaml'
+        bat 'kubectl apply -f k8s/deployment.yaml'
       }
     }
   }
