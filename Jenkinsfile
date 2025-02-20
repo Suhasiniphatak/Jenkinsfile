@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git branch: 'master', url: 'https://github.com/Suhasiniphatak/Jenkinsfile.git'   
+        git url: 'https://github.com/Suhasiniphatak/Jenkinsfile.git'   
       }
     }
     stage('Build Docker Image') {
