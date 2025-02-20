@@ -11,7 +11,9 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-        bat 'docker build -t $DOCKER_IMAGE .'
+        script{
+          def dockerImage=env.DOCKER_IMAGE
+          bat 'docker build -t $DOCKER_IMAGE .'
       }
     }
     stage('Run Tests') {
