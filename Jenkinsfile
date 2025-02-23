@@ -33,7 +33,7 @@ pipeline {
 
         stage('Push Image to Docker Hub') {  // Fixed stage name
             steps {
-                bat "docker login -u your-dockerhub-username -p your-dockerhub-password"
+                bat "docker login -u suhasini03 -p Suhasini##03"
                 bat "docker push ${DOCKER_IMAGE}"
             }
         }
