@@ -14,7 +14,6 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                // Ensure the Dockerfile is in the correct location
                 bat "docker build -t ${DOCKER_IMAGE} -f Dockerfile ."
             }
         }
