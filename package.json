@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"  // Corrected the syntax here
+    "test": "jest"  
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "jest": "^27.0.0"  // Added Jest as a dev dependency
+    "jest": "^27.0.0"  
   }
 }
