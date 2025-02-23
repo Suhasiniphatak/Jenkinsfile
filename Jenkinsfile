@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Suhasiniphatak/Jenkinsfile.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Suhasiniphatak/Jenkinsfile.git'
+
             }
         }
 
