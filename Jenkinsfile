@@ -6,7 +6,7 @@ DOCKER_IMAGE = "suhasini03/myapp-backend:v1"
 stages {
 stage('Checkout Code') {
 steps {
-git 'https://github.com/Suhasiniphatak/Jenkinsfile.git'
+git branch:'main', url: 'https://github.com/Suhasiniphatak/Jenkinsfile.git'
 }
 }
 stage('Build Docker Image') {
