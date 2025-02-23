@@ -9,13 +9,13 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Suhasiniphatak/Jenkinsfile.git'
-
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                bat "docker build -t ${DOCKER_IMAGE} ."
+                // Ensure the Dockerfile is in the correct location
+                bat "docker build -t ${DOCKER_IMAGE} -f Dockerfile ."
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('Push Image to Docker Hub') {  // Fixed stage name
+        stage('Push Image to Docker Hub') {
             steps {
                 bat "docker login -u suhasini03 -p Suhasini##03"
                 bat "docker push ${DOCKER_IMAGE}"
