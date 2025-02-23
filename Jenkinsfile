@@ -10,8 +10,6 @@ git 'https://github.com/Suhasiniphatak/Jenkinsfile.git'
 }
 }
 stage('Build Docker Image') {
-PHASE 3
-DEVOPS ENGINEER
 steps {
 bat 'docker build -t $DOCKER_IMAGE .'
 }
